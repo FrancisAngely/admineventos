@@ -20,14 +20,18 @@
 </head>
 
 <body>
-<?php include("head.php");?>
+    <?php include("topbar.php"); ?>
+    <!-- Begin page -->
+    <div class="layout-wrapper">
+        <?php include("sliderbar.php"); ?>
 
-<?php include("leftsidebar.php");?>
+
+
+        <div class="page-content">
 
 
 
-
-<?php include("scripts.php");?>  
+            <?php include("footer.php"); ?>
 
 </body>
 

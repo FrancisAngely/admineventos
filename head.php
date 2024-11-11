@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="light" data-menu-color="light" data-topbar-color="dark">
-
-<head>
     <meta charset="utf-8" />
     <title>Dashboard | Scoxe - Responsive Bootstrap 5 Admin Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +13,3 @@
     <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
     <script src="assets/js/config.js"></script>
-</head>
-
-</html>
