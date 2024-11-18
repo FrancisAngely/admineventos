@@ -1,17 +1,34 @@
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
-  <?php include("head.php");?>
-  <?php include("controller.php");?>
-  <body>
-    <?php include("iconos.php");?>
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" data-menu-color="light" data-topbar-color="dark">
 
-<?php include("header.php");?>
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard | Scoxe - Responsive Bootstrap 5 Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+  <meta content="Myra Studio" name="author" />
 
-<div class="container-fluid">
-  <div class="row">
-    <?php include("menu.php");?>
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <link href="assets/libs/morris.js/morris.css" rel="stylesheet" type="text/css" />
+
+  <!-- App css -->
+  <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+  <script src="assets/js/config.js"></script>
+</head>
+
+<body>
+  <?php include("head.php"); ?>
+  <div class="layout-wrapper">
+    <?php include("sliderbar.php"); ?>
+    <div class="page-content">
+      <?php include("topbar.php"); ?>
+      <div class="px-3">
+        <div class="container-fluid">
+          <?php include("breadcrumb.php"); ?>
+
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Roles - Editar</h1>
            <a href="modulo_roles_list.php" class="btn btn-primary">Volver</a>
@@ -31,10 +48,6 @@
         <input type="text" class="form-control" id="role" name="role" placeholder="Role" value="<?php echo $role["role"];?>"  >
         </div>
 
-
-       
-
-
         <div class="mb-3"> 
         <input type="button" class="form-control" value="Aceptar" id="btnform1">
         </div>
@@ -43,10 +56,18 @@
  </div>    
 
       
-    </main>
-  </div>
-</div>
- <?php include("scripts.php");?>   
+  </div> <!-- container -->
+
+            </div> <!-- content -->
+
+           
+            <?php include("footer.php");?>
+           
+
+        </div>
+    </div>
+   
+    <?php include("scripts.php");?>   
       
       
 <script>
@@ -139,7 +160,6 @@ $( document ).ready(function() {
             
             
             
-            //$("#form1").submit();
      
         
          

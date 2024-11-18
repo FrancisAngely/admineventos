@@ -1,5 +1,5 @@
 <?php
-$host = "localhost:3306";
+$host = "localhost:3307";
 $user = "root";
 $password = "";
 $database = "bd_eventos";
@@ -16,5 +16,4 @@ $mysqli->set_charset("utf8");
 try {
     $dbh = new PDO('mysql:host=localhost;dbname=ifc303', $user, $password);
 } catch (PDOException $e) {
-    // attempt to retry the connection after some timeout for example
 }

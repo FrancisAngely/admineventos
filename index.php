@@ -20,19 +20,21 @@
 </head>
 
 <body>
-    <?php include("topbar.php"); ?>
-    <!-- Begin page -->
+    <?php include("head.php"); ?>
     <div class="layout-wrapper">
         <?php include("sliderbar.php"); ?>
-
-
-
         <div class="page-content">
-
-
-
+            <?php include("topbar.php"); ?>
+            <div class="px-3">
+                <!-- Start Content-->
+                <div class="container-fluid">
+                    <?php include("breadcrumb.php"); ?>
+                </div>
+            </div>
             <?php include("footer.php"); ?>
-
+        </div>
+    </div>
+    <?php include("scripts.php"); ?>
 </body>
 
 </html>

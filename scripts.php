@@ -1,15 +1,17 @@
-<script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js" ></script>
+<script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+    <!-- Jquery Sparkline Chart  -->
+    <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Jquery-knob Chart Js-->
+    <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
 
 
-<script>
-$( document ).ready(function() {
-   
-   $(".select2").select2();
-   
-    
-    
-});      
-      
-</script>  
+    <!-- Morris Chart Js-->
+    <script src="assets/libs/morris.js/morris.min.js"></script>
+
+    <script src="assets/libs/raphael/raphael.min.js"></script>
+
+    <!-- Dashboard init-->
+    <script src="assets/js/pages/dashboard.js"></script>

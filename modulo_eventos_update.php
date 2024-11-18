@@ -5,11 +5,9 @@ $tabla="eventos";
 
 
 if($_FILES["file_evento"]["name"]!=""){
-    //función que me devuelva el valor del campo imagen del producto editado
-    // conseguirValor($tabla,$campo,$id)
+
     $target=conseguirValor($tabla,"file_evento",$_POST["id"]);
    
-    //función que borre ese archivo
    borrarArchivo($target);
 }
 

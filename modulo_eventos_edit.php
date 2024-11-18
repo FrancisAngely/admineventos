@@ -1,17 +1,34 @@
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
-  <?php include("head.php");?>
-  <?php include("controller.php");?>
-  <body>
-    <?php include("iconos.php");?>
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" data-menu-color="light" data-topbar-color="dark">
 
-<?php include("header.php");?>
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard | Scoxe - Responsive Bootstrap 5 Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+  <meta content="Myra Studio" name="author" />
 
-<div class="container-fluid">
-  <div class="row">
-    <?php include("menu.php");?>
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <link href="assets/libs/morris.js/morris.css" rel="stylesheet" type="text/css" />
+
+  <!-- App css -->
+  <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+  <script src="assets/js/config.js"></script>
+</head>
+
+<body>
+  <?php include("head.php"); ?>
+  <div class="layout-wrapper">
+    <?php include("sliderbar.php"); ?>
+    <div class="page-content">
+      <?php include("topbar.php"); ?>
+      <div class="px-3">
+        <div class="container-fluid">
+          <?php include("breadcrumb.php"); ?>
+                    
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Eventos - Editar</h1>
            <a href="modulo_eventos_list.php" class="btn btn-primary">Volver</a>
@@ -43,24 +60,19 @@
             <img src="<?php echo $evento["file_evento"];?>" class="img-fluid">
             <input type="file" class="form-control" id="file_evento" name="file_evento" >
         </div>
-
       
          <div class="mb-3">
             <label for="direccion" class="form-label">Dirección</label>
             <span id="direccion_error" class="text-danger"></span>
             <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" value="<?php echo $evento["direccion"];?>"  >
         </div>
-        
-        
-        
-        
+
         <div class="mb-3">
         <label for="id_provincias" class="form-label">Provincia</label>
         <span id="id_provincias_error" class="text-danger"></span>
         <select class="form-control" id="id_provincias" name="id_provincias">
             <option></option>
-            <?php //echo SelectOptionsId("roles","role");?>
-             <?php echo SelectOptionsIdSel("provincias","provincia",$evento["id_provincias"]);?>
+             <?php echo SelectOptionsIdSel("provincias","provincia",$evento["id_provincia"]);?>
         </select>
         </div>
         
@@ -69,16 +81,10 @@
         <span id="id_localidades_error" class="text-danger"></span>
         <select class="form-control" id="id_localidades" name="id_localidades">
             <option></option>
-            <?php //echo SelectOptionsId("roles","role");?>
               <?php echo SelectOptionsIdSelByColumn("localidades","localidad",$evento["id_localidades"],"id_provincias",$evento["id_provincias"]);?>
         </select>
         </div>
-        
-        
-        
-      
-        
-    
+
          <div class="mb-3">
             <label for="cp" class="form-label">C.P.</label>
             <span id="cp_error" class="text-danger"></span>
@@ -91,29 +97,30 @@
             <input type="time" class="form-control" id="hora_comienzo" name="hora_comienzo" placeholder="Hora comienzo" value="<?php echo $evento["hora_comienzo"];?>"  >
         </div>
        
-
-
         <div class="mb-3"> 
         <input type="button" class="form-control" value="Aceptar" id="btnform1">
         </div>
 
     </form>
- </div>    
+     
+    </div> <!-- container -->
 
-      
-    </main>
-  </div>
-</div>
- <?php include("scripts.php");?>   
+            </div> <!-- content -->
+
+           
+            <?php include("footer.php");?>
+           
+
+        </div>
+    </div>
+   
+    <?php include("scripts.php");?>    
       
       
 <script>
 $( document ).ready(function() {
    
     $("#btnform1").click(function(){
-       // Swal.fire("SweetAlert2 is working!");
-        
-        //SELECT `id`, `id_eventos`, `usuario`, `password`, `email`, `created_at`, `updated_at` FROM `eventos` WHERE 1
          let evento=$("#evento").val();  
          let fecha=$("#fecha").val();  
          let direccion=$("#direccion").val();  
@@ -204,15 +211,11 @@ $( document ).ready(function() {
                      }
                 }
              });
-                     
-            
+ 
         }
-            
-    
-         
+  
     });
-    
-   
+
     $("#id_provincias").change(function(){
            let id_provincias= $("#id_provincias").val();
             $.ajax({
